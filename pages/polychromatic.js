@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import axios from "axios";
 import Image from "next/image";
+import styles from '@/styles/Home.module.css'
 
 export default function Polychromatic(){
 
@@ -57,11 +58,14 @@ export default function Polychromatic(){
 
     return(
         <>
-        Polychromatic
-        <Image src={image} alt={image} width={200} height={200}/>
+        <div className={styles.main}>
+
+        <div className={styles.tableItems}>
+        <p>POLYCHROMATIC</p>
+        <Image className={styles.Image} src={image} alt={image} width={400} height={400}/>
         <div>{time}</div>
         <div>{coords[0]}, {coords[1]}</div>
-
+        </div>
         <table>
             <thead>
                 <tr>
@@ -71,7 +75,7 @@ export default function Polychromatic(){
                     <th>Image</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody className={styles.tableBody}>
                 {
                     images.map((e, i) => {
                         return(
@@ -79,7 +83,7 @@ export default function Polychromatic(){
                                 <td>{e.time}</td>
                                 <td>{e.coords.lat}</td>
                                 <td>{e.coords.lon}</td>
-                                <td><Image src={e.image} alt={i} width={200} height={200}/></td>
+                                <td className={styles.section}><Image src={e.image} alt={i} width={200} height={200}/></td>
                                 <td>
                                     <button onClick={() => {
                                         setImage(e.image);
@@ -94,7 +98,8 @@ export default function Polychromatic(){
                     })
                 }
             </tbody>
-        </table>
+        </table>        
+        </div>
         </>
     )
 }

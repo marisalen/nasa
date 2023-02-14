@@ -7,6 +7,7 @@ import axios from 'axios'
 import Link from 'next/link'
 
 export default function Home() {
+
   const [data, setData] = useState();
 
   const apiKey = "ntiWUplo2K69bdOstoJeNMViBszdT8BoBK1oeChi"
@@ -32,27 +33,29 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <Link href="/polychromatic">Polychromatic</Link>
+        <h1>NASA POLYCHROMATIC</h1>
+        <Link className={styles.Link} href="/polychromatic">click to see polychromatic views</Link>
 
-
-        {
-          data && data.results.map((tech, index) => {
-            return(
-              <div key={index}>
-                {
-                  tech && tech.map((t, ind) => {
-                    if(ind === 10){
-                      return(
-                        <Image src={t} alt={t} key={ind} width={100} height={100}/>
-                      )
-                    }
-                  })
+  <div className={styles.gridContainer}>
+    {data &&
+      data.results.map((tech, index) => {
+        return (
+          <div key={index}>
+            {tech &&
+              tech.map((t, ind) => {
+                if (ind === 10) {
+                  return (
+                    <div key={ind}>
+                      <Image src={t} alt={t} width={100} height={100} />
+                    </div>
+                  );
                 }
-              </div>
-            )
-          })
-        }
-      </main>
-    </>
+              })}
+          </div>
+        );
+      })}
+  </div>
+</main>
+</>
   )
-}
+ }

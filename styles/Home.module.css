@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 .main {
   display: flex;
   flex-direction: column;
@@ -5,6 +7,9 @@
   align-items: center;
   padding: 6rem;
   min-height: 100vh;
+  background-color: black;
+  color: white;
+  font-family: 'Space Mono', monospace;
 }
 
 .description {
@@ -275,4 +280,49 @@
   to {
     transform: rotate(0deg);
   }
+}
+
+.tableItems {
+  margin-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.tableItems p {
+  margin-bottom: 40px;
+  font-size: 40px;
+  font-weight: 400;
+  color: #fca311;
+  font-family: 'Bebas Neue', cursive;
+}
+
+.tableBody button {
+  padding: 10px;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 20px;
+  background-color: #14213d;
+  color: white;
+  border: none;border-radius: 5px;
+}
+
+.Image {
+  margin-left: 10px;
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 20px;
+}
+
+.Link {
+  font-size: 15px;
+  margin-bottom: 40px;
+}
+
+.main h1 {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 50px;
+  color: #fca311;
 }
