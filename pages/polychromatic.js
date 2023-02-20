@@ -11,7 +11,7 @@ export default function Polychromatic(){
     const [date, setDate] = useState('');
     const [coords, setCoords] = useState({});
 
-    const apiKey = "ntiWUplo2K69bdOstoJeNMViBszdT8BoBK1oeChi";
+    const apiKey = process.env.NEXT_PUBLIC_KEY;
     const url = `https://epic.gsfc.nasa.gov/api/natural?api_key=${apiKey}`
 
     const getPolychromaticData = async () => {
